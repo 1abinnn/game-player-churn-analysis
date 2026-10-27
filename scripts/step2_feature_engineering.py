@@ -1,24 +1,26 @@
 """
 =============================================================================
-Step 2: Feature Engineering & Segmentation
+第二步：特征工程与分群
 =============================================================================
-Project: Online Gaming Behavior Insight
-Constitution: Based on CONSTITUTION.md - Chapter 2 (Three-step modular development)
+项目：游戏玩家行为与流失预测
+宪法约束：基于 CONSTITUTION.md 第二章 - 三步模块化开发原则
 =============================================================================
 
-This chapter covers:
-1. Derive new behavioral features (activity metrics, engagement intensity)
-2. Feature encoding (categorical -> numerical)
-3. Outlier detection and handling
-4. Feature scaling (standardization/normalization)
-5. Player segmentation analysis
+本章目标：
+1. 衍生新的行为特征（活跃度指标、肝度系数）
+2. 类别特征编码（分类变量 -> 数值变量）
+3. 异常值检测与处理
+4. 特征缩放（标准化/归一化）
+5. 玩家分群分析
 
-Author: AI Game Data Analyst
-Date: 2026-10-27
+作者：AI 游戏数据分析师
+日期：2026-10-27
 """
 
 # ============================================================================
-# 1. Import Libraries
+# 1. 导入库
+# ============================================================================
+# 导入必要的库（pandas, numpy, sklearn等）
 # ============================================================================
 
 import pandas as pd
@@ -28,7 +30,8 @@ import seaborn as sns
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import warnings
 
-# Settings
+# 设置
+# 设置中文字体和图表样式
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS']
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_style("whitegrid")
@@ -40,24 +43,30 @@ print("=" * 80)
 
 
 # ============================================================================
-# 2. Load Data
+# 2. 加载数据
+# ============================================================================
+# 加载原始数据集并创建副本用于特征工程
 # ============================================================================
 
 print("\n[INFO] Loading dataset...")
-
+# 数据文件路径（相对路径）
 DATA_PATH = "../data/online_gaming_behavior_dataset.csv/online_gaming_behavior_dataset.csv"
+
+# 读取数据
 df = pd.read_csv(DATA_PATH)
 
 print(f"[OK] Data loaded successfully!")
 print(f"   - Records: {len(df):,}")
 print(f"   - Features: {len(df.columns)}")
 
-# Create a copy for feature engineering
+# 创建数据副本用于特征工程（避免修改原始数据）
 df_feat = df.copy()
 
 
 # ============================================================================
-# 3. Feature Derivation (New Behavioral Features)
+# 3. 特征衍生（新的行为特征）
+# ============================================================================
+# 基于原始特征衍生新的业务指标，用于捕捉玩家行为模式
 # ============================================================================
 
 print("\n" + "=" * 80)
@@ -65,12 +74,13 @@ print("[FEATURE] Deriving New Behavioral Features")
 print("=" * 80)
 
 # ----------------------------------------------------------------------------
-# 3.1 Activity Score (Composite activity metric)
-# Formula: Weighted combination of playtime, sessions, and session duration
-# Business meaning: Overall activity level indicator
+# 3.1 活跃度评分（综合活跃度指标）
+# 公式：游玩时长、游玩次数和单次时长的加权组合
+# 业务含义：反映玩家整体活跃程度
 # ----------------------------------------------------------------------------
 
 print("\n[1/6] Creating ActivityScore...")
+# 活跃度评分：综合衡量玩家活跃程度
 
 # Normalize components to 0-100 scale
 playtime_norm = (df_feat['PlayTimeHours'] - df_feat['PlayTimeHours'].min()) / \

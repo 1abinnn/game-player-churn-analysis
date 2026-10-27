@@ -1,24 +1,26 @@
 """
 =============================================================================
-Step 3: Model Training & Business Insights
+第三步：模型训练与业务转化
 =============================================================================
-Project: Online Gaming Behavior Insight
-Constitution: Based on CONSTITUTION.md - Chapter 2 (Three-step modular development)
+项目：游戏玩家行为与流失预测
+宪法约束：基于 CONSTITUTION.md 第二章 - 三步模块化开发原则
 =============================================================================
 
-This chapter covers:
-1. Train classification models (LightGBM, XGBoost, Logistic Regression, Random Forest)
-2. Model evaluation (Accuracy, Precision, Recall, F1-Score, Confusion Matrix)
-3. Feature importance analysis
-4. Business recommendations based on model results
-5. STAR-format resume project description
+本章目标：
+1. 训练分类模型（LightGBM、XGBoost、逻辑回归、随机森林）
+2. 模型评估（准确率、精确率、召回率、F1分数、混淆矩阵）
+3. 特征重要性分析
+4. 基于模型结果的业务建议
+5. STAR法则简历项目描述
 
-Author: AI Game Data Analyst
-Date: 2026-10-27
+作者：AI 游戏数据分析师
+日期：2026-10-27
 """
 
 # ============================================================================
-# 1. Import Libraries
+# 1. 导入库
+# ============================================================================
+# 导入必要的库（sklearn, lightgbm, xgboost等）
 # ============================================================================
 
 import pandas as pd
@@ -35,7 +37,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
 import warnings
 
-# Try to import LightGBM and XGBoost (optional but recommended)
+# 尝试导入 LightGBM 和 XGBoost（可选但推荐）
 try:
     import lightgbm as lgb
     LIGHTGBM_AVAILABLE = True
@@ -50,7 +52,8 @@ except ImportError:
     XGBOOST_AVAILABLE = False
     print("[WARNING] XGBoost not installed. Install with: pip install xgboost")
 
-# Settings
+# 设置
+# 设置中文字体和图表样式
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS']
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_style("whitegrid")
@@ -62,12 +65,16 @@ print("=" * 80)
 
 
 # ============================================================================
-# 2. Load Processed Data
+# 2. 加载处理后的数据
+# ============================================================================
+# 加载 Step 2 特征工程后的数据集
 # ============================================================================
 
 print("\n[INFO] Loading processed data...")
-
+# 数据文件路径
 DATA_PATH = "../data/processed_data_with_features.csv"
+
+# 读取数据
 df = pd.read_csv(DATA_PATH)
 
 print(f"[OK] Data loaded successfully!")
