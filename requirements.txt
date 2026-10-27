@@ -1,0 +1,90 @@
+# =============================================================================
+# Game Player Churn Prediction Project
+# Requirements File
+# =============================================================================
+# Project: Online Gaming Behavior Insight
+# Version: 1.0.0
+# Last Updated: 2026-10-27
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Core Data Processing Libraries
+# -----------------------------------------------------------------------------
+pandas>=1.5.0
+numpy>=1.23.0
+
+# -----------------------------------------------------------------------------
+# Visualization Libraries
+# -----------------------------------------------------------------------------
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+# -----------------------------------------------------------------------------
+# Machine Learning Libraries
+# -----------------------------------------------------------------------------
+scikit-learn>=1.2.0
+
+# -----------------------------------------------------------------------------
+# Gradient Boosting Frameworks (Optional but Recommended)
+# -----------------------------------------------------------------------------
+lightgbm>=3.3.0
+xgboost>=1.7.0
+
+# -----------------------------------------------------------------------------
+# Additional Utilities (Optional)
+# -----------------------------------------------------------------------------
+# Uncomment if needed for advanced features:
+
+# For hyperparameter tuning
+# optuna>=3.0.0
+# scipy>=1.9.0
+
+# For model explainability (SHAP values)
+# shap>=0.41.0
+
+# For model persistence
+# joblib>=1.2.0
+
+# For progress bars
+# tqdm>=4.64.0
+
+# For date/time handling (if extending to time-series)
+# python-dateutil>=2.8.2
+
+# -----------------------------------------------------------------------------
+# Development Tools (Optional)
+# -----------------------------------------------------------------------------
+# Uncomment if you want to use Jupyter notebooks for exploration:
+
+# jupyter>=1.0.0
+# ipykernel>=6.15.0
+# notebook>=6.5.0
+
+# For code quality
+# flake8>=5.0.0
+# black>=22.0.0
+
+# For testing
+# pytest>=7.2.0
+
+# =============================================================================
+# Installation Instructions
+# =============================================================================
+#
+# Basic installation (required only):
+#   pip install pandas numpy matplotlib seaborn scikit-learn
+#
+# Full installation (recommended):
+#   pip install pandas numpy matplotlib seaborn scikit-learn lightgbm xgboost
+#
+# Or install all from this file:
+#   pip install -r requirements.txt
+#
+# For Jupyter users:
+#   pip install -r requirements.txt jupyter ipykernel
+#
+# =============================================================================
+# Python Version Requirement
+# =============================================================================
+# Python >= 3.8 (Recommended: Python 3.9 or 3.10)
+# =============================================================================

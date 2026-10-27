@@ -1,0 +1,73 @@
+# =============================================================================
+# Git Ignore File for Game Player Churn Prediction Project
+# =============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (Optional - uncomment if you don't want to track data files)
+# data/*.csv
+# data/**/*.csv
+
+# Output images (uncomment if you don't want to track visualizations)
+# output/*.png
+
+# Model files
+*.pkl
+*.joblib
+*.model
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# =============================================================================
+# Notes
+# =============================================================================
+# - Keep data/*.csv tracked for reproducibility
+# - Keep output/*.png tracked for documentation
+# - Remove large files (>100MB) to avoid GitHub LFS requirements
+# =============================================================================
